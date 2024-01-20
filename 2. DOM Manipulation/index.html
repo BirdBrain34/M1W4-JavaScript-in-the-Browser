@@ -31,9 +31,8 @@
         5. querySelectorAll
         */
         // Todo 2.2 Set the text of the first list item to "<>"
-        let firstEl = document.querySelectorAll("#subjects-taken > *")
-        firstEl[0].innerText="<>"
-        console.log(firstEl)
+        let listEl = document.querySelectorAll("#subjects-taken > *")
+        listEl[0].innerText="<>"
         // Checkpoint 3.2 What is the difference between innerText, textContent, and innerHTML. When should you use one over the other
         // Answer:
         /*
@@ -43,20 +42,29 @@
         */
         // Todo 2.3 Create another list item, and add it as a child of the unordered list
         // Relevant Link: https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree
-        ul.append(li)
-        const  firstList = document.querySelector('subjects-taken')
-        console.log(firstList.innerText)
-        console.log(firstList.textContent)
-        console.log(firstList.innerHTML)
+        let  ul = document.querySelector("#subjects-taken")
+        let newLiItem = document.createElement("li")
+
+        newLiItem.textContent = "textContent"
+        
+        ul.appendChild(newLiItem)
         // Todo 2.4 Set the id attribute of the list item you created to "favorite-subject". Set the class of the list item to "newly-created"
-
+        newLiItem.id = "favorite-subject"
+        newLiItem.classList.add("newly-created")
         // Todo 2.5 Delete the second list item in the unordered list
-
+        listEl[1].removeChild(listEl[1].firstChild)
         // Checkpoint 2.3 Checkpoint what is the difference between node and element
-
+        /*
+        1. Node - represents various types of entities (i.e. elements, attributes, text, etc).
+        2. Element - are nodes that are specific to HTML, have tag names, attributes and methods for accessing child nodes.
+        */
         // Bonus Todo 2.6 Select the parent of the unordered list.
-
+        let parentLi = document.getElementById('subjects-taken')
+        let parentBox = parentLi.parentNode
+        console.log(parentBox.id)
         // Bonus Todo 2.7 Select the previous sibling of the list item you previously created
+        console.log(newLiItem.previousSibling.textContent)
+
     </script>
 </body>
 
