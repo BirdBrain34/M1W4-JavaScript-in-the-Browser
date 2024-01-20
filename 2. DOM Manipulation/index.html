@@ -36,10 +36,18 @@
         console.log(firstEl)
         // Checkpoint 3.2 What is the difference between innerText, textContent, and innerHTML. When should you use one over the other
         // Answer:
-        
+        /*
+        1. innerText - returns all text contained by an element and all its child elements.
+        2. textContent - is all text contained by an element and all its children that are for formatting purposes only.
+        3. innerHTML returns all text, including html tags, that is contained by an element.
+        */
         // Todo 2.3 Create another list item, and add it as a child of the unordered list
         // Relevant Link: https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree
-
+        ul.append(li)
+        const  firstList = document.querySelector('subjects-taken')
+        console.log(firstList.innerText)
+        console.log(firstList.textContent)
+        console.log(firstList.innerHTML)
         // Todo 2.4 Set the id attribute of the list item you created to "favorite-subject". Set the class of the list item to "newly-created"
 
         // Todo 2.5 Delete the second list item in the unordered list
