@@ -106,9 +106,8 @@
 
         grandparent.addEventListener('click', e=>{
             console.log("Grandparent")
-        } ,{capture: true})
+        })
         parent.addEventListener('click', e=>{
-            e.stopPropagation()
             console.log("Parent")
         })
         child.addEventListener('click', e=>{
@@ -116,11 +115,22 @@
         })
         // Checkpoint 3.2 What is event bubbling? How was it shown in Todo 3.5?
         // Answer: 
-        // Event bubbling is a sequence of events through DOM for when an element is triggered it will proc "sequentially" or depending on how it was oriented. 
+        /* Event bubbling is a sequence of events through DOM for when an element 
+        is triggered it will proc "sequentially" or depending on how it was oriented.
+        */ 
         // Bonus Todo 3.6 Change your code in the previous todo such that "grandparent" is displayed first
-
+        /*
+        grandparent.addEventListener('click', e=>{
+            console.log("Grandparent")
+        } ,{capture: true})
+        */
         // Bonus Todo 3.7 Change your code in the previous todo such that "parent" is never displayed
-
+        /*
+        parent.addEventListener('click', e=>{
+            e.stopPropagation()
+            console.log("Parent")
+        })
+        */
     </script>
 </body>
 
